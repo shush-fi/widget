@@ -1,5 +1,6 @@
 import { useMutation } from "react-query";
 import { useApiUrl } from "@/hooks/use-api-url";
+import { useIntegratorId } from "@/hooks/use-integrator-id";
 
 interface CreateOrderMutationVariables {
   amount?: number;
@@ -12,6 +13,7 @@ interface CreateOrderMutationVariables {
 }
 
 export const useCreateOrderMutation = () => {
+  const integratorId = useIntegratorId()
   const apiUrl = useApiUrl();
 
   const createOrder = async ({
@@ -36,6 +38,10 @@ export const useCreateOrderMutation = () => {
     try {
       const response = await fetch(apiUrl + "/orders", {
         method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-integrator-id": integratorId,
+        },
         body: payload,
       });
 

@@ -18,7 +18,7 @@ type Story = StoryObj<typeof meta>;
 export const Widget: Story = {
   args: {
     config: {
-      integratorId: "hey"
+      integratorId: "awesome-dapp"
     },
   }
 }

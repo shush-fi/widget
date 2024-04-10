@@ -1,6 +1,7 @@
 import { useApiUrl } from "@/hooks/use-api-url";
 import { useQuery } from "react-query";
 import axios, { AxiosError } from "axios";
+import { useIntegratorId } from "@/hooks/use-integrator-id";
 
 interface UseQuoteOptions {
   fromToken?: string;
@@ -26,6 +27,7 @@ export const useQuote = ({
   anonymous = false,
   enabled = true,
 }: UseQuoteOptions) => {
+  const integratorId = useIntegratorId();
   const apiUrl = useApiUrl();
   const _queryKey = ["quote", amount, fromToken, toToken, isExactOut, anonymous];
 
@@ -41,7 +43,10 @@ export const useQuote = ({
     url.searchParams.set("anonymous", String(Boolean(anonymous)));
 
     try {
-      const response = await axios.get(url.toString(), { signal });
+      const response = await axios.get(url.toString(), { signal, headers: {
+        "Content-Type": "application/json",
+        "x-integrator-id": integratorId,
+      } });
       const { success, data, error } = response.data;
 
       if (!success) throw new Error(error);
