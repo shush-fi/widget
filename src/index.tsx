@@ -29,7 +29,7 @@ export function Shush({ config }: { config: ShushConfig }) {
         shush={shush}
         theme={defaults.theme}
       >
-        <div className="sh-w-max-w-[440px]">
+        <div className="sh-w-max-w-[440px] sh-w-w-full">
           <ThemeProvider>
             <Widget />
           </ThemeProvider>
