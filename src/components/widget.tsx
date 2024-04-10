@@ -3,9 +3,6 @@ import { Outlet, RouterProvider, createMemoryRouter } from "react-router-dom";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
 import { DetailedOrderView } from "@/components/views/orders.$id.detailed";
-import { useRef } from "react";
-import { useTheme } from "@/hooks/use-theme";
-import { TooltipPortal } from "@radix-ui/react-tooltip";
 import { Toaster } from "@/components/ui/toaster";
 
 const router = createMemoryRouter(

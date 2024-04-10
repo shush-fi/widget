@@ -7,7 +7,6 @@ import { useMemo } from "react";
 import { createShush } from "@/lib/shush";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./index.css";
-import { DialogPortal } from "@radix-ui/react-dialog";
 
 const queryClient = new QueryClient();
 

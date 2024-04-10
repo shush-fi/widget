@@ -11,8 +11,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, "src/index.tsx"),
-      name: "Headless",
-      fileName: "headless",
+      name: "Widget",
+      fileName: "widget",
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
@@ -25,7 +25,7 @@ export default defineConfig({
           react: "React",
           "react-dom": "ReactDOM",
         },
-        assetFileNames: "headless.[ext]",
+        assetFileNames: "widget.[ext]",
       },
     },
   },

@@ -1,5 +1,5 @@
-import { Dialog, DialogContent, DialogOverlay } from "@/components/ui/dialog";
-import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { SearchIcon } from "lucide-react";
 import { useState } from "react";
 

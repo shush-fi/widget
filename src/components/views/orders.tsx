@@ -1,16 +1,14 @@
 import { Header } from "@/components/header";
 import { Loading } from "@/components/loading";
-import { OrderProgressIcon, statusCheckpoints, statusToCheckpoint } from "@/components/order-progress-icon";
-import { Spinner } from "@/components/spinner";
+import { OrderProgressIcon, statusToCheckpoint } from "@/components/order-progress-icon";
 import { Layout } from "@/components/views/layout";
 import { useLocalOrderIds } from "@/hooks/use-local-order-ids";
 import { useOrdersStatus } from "@/hooks/use-order-status";
-import { usePrices } from "@/hooks/use-prices";
 import { formatAmount, shortenOrderId } from "@/lib/utils";
 import { Order } from "@shushfi/sdk";
 import { formatDate } from "date-fns";
 import { ArrowRight} from "lucide-react";
-import { useEffect, useMemo } from "react";
+import {  useMemo } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const OrderHistoryItem = ({ order }: { order: Order}) => {
@@ -52,8 +50,6 @@ const OrderHistoryItem = ({ order }: { order: Order}) => {
 }
 
 export function OrdersView() {
-  const {data:prices }= usePrices()
-  
   const [localOrders] = useLocalOrderIds();
   const navigate = useNavigate();
 

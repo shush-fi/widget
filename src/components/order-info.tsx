@@ -3,8 +3,6 @@ import { TokenDetails } from "@/components/token-details";
 import { usePrices } from "@/hooks/use-prices";
 import { formatAmount, shortenAddress } from "@/lib/utils";
 import { Order, Token } from "@shushfi/sdk";
-import { Check, Copy } from "lucide-react";
-import { useState } from "react";
 
 export const OrderInfo = ({
   order,
@@ -15,7 +13,6 @@ export const OrderInfo = ({
   inToken?: Token;
   outToken?: Token;
 }) => {
-  const [copiedRecipient, setCopiedRecipient] = useState(false);
   const { data: prices } = usePrices();
 
   const formattedInAmountUsd =
@@ -32,13 +29,6 @@ export const OrderInfo = ({
     prices[order.outToken] &&
     Intl.NumberFormat().format(prices[order.outToken] * order.outAmount);
 
-  const handleCopyRecipient = () => {
-    navigator.clipboard.writeText(order.recipientAddress!);
-    setCopiedRecipient(true);
-    setTimeout(() => {
-      setCopiedRecipient(false);
-    }, 2000);
-  }
 
   return (
     <div className="sh-w-flex sh-w-flex-col sh-w-w-full">

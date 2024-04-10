@@ -1,7 +1,7 @@
 {
   "name": "@shushfi/widget",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -14,12 +14,12 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/headless.umd.cjs",
-  "module": "./dist/headless.js",
+  "main": "./dist/widget.umd.cjs",
+  "module": "./dist/widget.js",
   "exports": {
     ".": {
-      "import": "./dist/headless.js",
-      "require": "./dist/headless.umd.cjs"
+      "import": "./dist/widget.js",
+      "require": "./dist/widget.umd.cjs"
     }
   },
   "dependencies": {
