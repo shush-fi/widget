@@ -97,6 +97,3 @@ export const theme = {
 };
 
 export const plugins = [tailwindcssAnimate, containerQueries];
-export const corePlugins = {
-  preflight: false,
-}
